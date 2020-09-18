@@ -1,0 +1,259 @@
+html, body {
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+    font-family: Roboto;
+    -webkit-print-color-adjust: exact !important;
+}
+
+img {
+    pointer-events: none;
+}
+
+.head {
+    background-image: url(images/coffee-yellow.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-print-color-adjust: exact;
+    height: 70vH;
+    position: relative;
+}
+
+.head p{
+    color: #000;
+    font-weight: 400;
+}
+
+.head h1 {
+    /* font-family: 'Abril Fatface', cursive; */
+    font-family: Roboto;
+    /* font-weight: 700; */
+    font-size: 48px;
+    color: #000;
+}
+
+.subhead{
+    /* float: right; */
+    width: 35%;
+    position: absolute;
+    top: 30%;
+    right: 15%; 
+}
+
+.overview {
+    background-color: #fbe8a6;
+    padding: 55px 0;
+    text-align: center;
+}
+
+.overview h5 {
+    line-height: 30px;
+}
+
+.grid {
+    text-align: center;
+    border: 2px solid #5F6366;
+    padding: 10px;
+    margin: 12px auto;
+    width: 135px;
+    height:135px;
+    /* width: 95%;
+    height:95%; */
+    border-radius: 5px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.grid p{
+    font-family: Roboto;
+    font-size: 15px;
+    color: #5F6366;
+    line-height: 18px;
+    padding-top: 15px;
+    font-weight: 500;
+}
+
+.grid:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    /* cursor: crosshair; */
+    /* background-color: #f0f0f0; */
+}
+
+/* .trait {
+    padding: 55px;
+} */
+
+.trait h2 {
+    font-size: 45px;
+    /* font-weight: 700; */
+    text-align: center;
+    color: #fff;
+    font-family: Roboto;
+}
+
+
+.trait hr {
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    border: none;
+}
+
+.trait p {
+    text-align: justify;
+}
+
+.score {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 100px;
+    color: #FF5B7E;
+    text-align: center;
+}
+
+.def {
+    /* background-color: rgba(6, 191, 172, 0.425); */
+    background-color: rgba(247, 108, 108, 0.7);
+    background-size: cover;
+    padding: 80px !important;
+}
+
+.trait:nth-child(2n) .def {
+    /* background-color: rgba(247, 108, 108, 0.7); */
+    background-color: rgba(6, 191, 172, 0.425);
+    background-size: cover;
+    padding: 80px !important;
+}
+
+.trait:nth-child(3n) .def {
+    background-color: #86b3d1;
+    background-size: cover;
+    padding: 80px !important;
+}
+
+.trait h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    color: #ff5b7e;
+}
+
+.trait:nth-child(2n) h3 {
+    color: #06BFAD;
+}
+
+.trait:nth-child(3n) h3 {
+    color: #4D6D9A;
+}
+
+/* .overlay {
+    background-color: rgba(6, 191, 172, 0.8);
+    padding: 80px ;
+} */
+
+mark {
+    background-color: rgba(255, 91, 127, 0.479) !important;
+    font-style: italic;
+    color: #fff;
+}
+
+.overall {
+    margin: auto !important;
+    width: 85%;
+    text-align: center;
+    /* color: #5F6366; */
+}
+
+.overall-col {
+    width: 33%;
+    text-align: center;
+    margin: auto;
+}
+
+.overall h5{
+    font-family: Roboto;
+    font-weight: 900;
+    color: rgb(70, 70, 70);
+    padding-top: 10px;
+    font-size: 45px;
+}
+
+.rcmend {
+    padding: 80px 0 !important;
+    text-align: center;
+    background-color: #F7F9F9 ;
+}
+
+.rcmend h2 {
+    text-align: center;
+    color: #4D6D9A;
+    font-size: 45px;
+    font-family: Roboto;
+    font-weight:700;
+}
+
+.rcmend h5 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rcmend p{
+    text-align: justify;
+}
+
+.rcmend mark {
+    background-color: #FFB48F !important;
+}
+
+.trait-rcmend {
+    padding: 80px !important;
+    margin: auto !important;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.table-container {
+    width: 80%;
+    margin: auto;
+}
+
+.col4{
+    width: 20%;
+    align-content:center;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.col5{
+    width: 80%;
+}
+
+@media print{
+    .head {
+        height: 100vH;
+        background-image: url(images/coffee-vertical.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .subhead{
+        /* float: right; */
+        width: 35%;
+        position: absolute;
+        top: 60%;
+        left: 15%; 
+    }
+
+    .trait{
+        page-break-before: always;
+    }
+
+    table.table-stripped tr td, .row, .group, .overview {
+        page-break-inside: avoid;
+    }
+}
+
