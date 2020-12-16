@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML Manual</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script> -->
+
+    <!-- Highlight.js -->
+    <!-- <script src="../node_modules/highlight.js/lib/highlight.min.js"></script> -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+    <link rel="stylesheet" href="ocean.css">
+
+    <!-- Bootstrap & CSS -->
+    <!-- <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script href="../bootstrap/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    
+    <!-- Google Fonts & icons -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- <link href="../node_modules/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet"> -->
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+    <!--------------------------------- HEADER ---------------------------------------->
+    <section class="header">
+        <div class="container">
+            <div class="row ver-center" style="margin: auto 0;">
+                <div class="col-sm-5">
+                    <img src="../images/html.png" style="width: 115%;">
+                </div>
+                <div class="col-sm-7" style="margin: auto;">
+                    <h1>NovoClinic HTML Manual v1.0</h1>
+                    <p>A simple guide to create HTML template for NovoClinic's wellness report.
+
+                    </p>
+
+                    <div class="row">
+                        <div class="col-md-3 col-6">
+                            <div class="btn" onclick="location.href='#general';">
+                                <div class="ver-center2">
+                                    <img src="../images/summary.png" style="width:40%;">
+                                    <h6>General Template</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="btn" onclick="location.href='#module';">
+                                <img src="../images/dnaaaa.png" style="width:40%;">
+                                <h6>Module Template</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="btn" onclick="location.href='#trait';">
+                                <div class="ver-center2">
+                                    <img src="../images/dnaaaa.png" style="width:40%;">
+                                    <h6>Trait <br>Template</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="btn" onclick="location.href='#optional';">
+                                <img src="../images/options.png" style="width:40%;">
+                                <h6>Optionals<br>&nbsp;</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------------- GENERAL ---------------------------------------->
+    <section class="secs" id="general">
+        <div class="container">
+            <h2>General Template</h2>
+            <div class="row">
+                <div style="margin: auto;">
+                    <button class="tablink" onclick="openPage('summary', this, '#F2F2F2')" id="defaultOpen"><i class="fas fa-chart-pie" style="font-size:16px;"></i>&nbsp;&nbsp;&nbsp;Summary</button>
+                    <button class="tablink" onclick="openPage('toc', this, '#F2F2F2')"><i class="fas fa-bookmark" style="font-size:16px;"></i>&nbsp;&nbsp;&nbsp;Table of Contents</button>
+                    <button class="tablink" onclick="openPage('others', this, '#F2F2F2')"><i class="fas fa-file-code" style="font-size:16px;"></i>&nbsp;&nbsp;&nbsp;Others</button>
+                </div>
+            </div>
+
+            <!--------------------------------- SUMMARY ---------------------------------------->
+            <div class="tabcontent" id="summary">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Summary HTML Template</h4>
+                <p>In NovoClinic, there are NINE risk levels provided; Elevated, Slightly Elevated, Normal, Slightly Advantaged, 
+                    Advantaged, High, Increased, Average and Low risk. Summary HTML will highlight two important things:
+                </p>
+                <div style="margin:0px 0px 20px 20px;">
+                    i. The total number of traits detected in every risk level.<br>
+                    ii. The list of traits in the highest risk level, either <span class="bold">Elevated</span> or <span class="bold">High Risk</span>.
+                </div>
+
+                <p>Although summary HTML can be customised, however we highly recommend users to use or modify our existing 
+                    template to avoid unwanted occurrences. We also recommend users to use Bootstrap version 4.5.3 and above to create the Summary HTML. 
+                    To include Bootstrap in HTML, please refer to <a href="#optional">here</a>.
+                </p>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Inserting total number of traits detected in each risk category</h4>
+                <p>In summary HTML, users can only place the total number of traits in each risk level at most two times, 
+                    using the ID provided in Table below.
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <span class="code">total_elevated</span>,<br>
+                                <span class="code">total_elevated2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in Elevated risk</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <span class="code">total_slight_elevated</span>,<br>
+                                <span class="code">total_slight_elevated2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in Slightly Elevated risk</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <span class="code">total_normal</span>,<br>
+                                <span class="code">total_normal2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in Normal risk</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <span class="code">total_slight_advantaged</span>,<br>
+                                <span class="code">total_slight_advantaged2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in Slightly Advantaged risk</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <span class="code">total_advantaged</span>,<br>
+                                <span class="code">total_advantaged2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in Advantaged risk</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>
+                                <span class="code">total_high</span>,<br>
+                                <span class="code">total_high2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in High risk</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>
+                                <span class="code">total_increased</span>,<br>
+                                <span class="code">total_increased2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in Increased risk</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>
+                                <span class="code">total_average</span>,<br>
+                                <span class="code">total_average2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in Average risk</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>
+                                <span class="code">total_low</span>,<br>
+                                <span class="code">total_low2</span>
+                            </td>
+                            <td>Total number of traits that are grouped in Low risk</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>For example, if users want to include only THREE risk categories
+                    (High, Average and Low risk) in a summary, the following lines can be included:
+                </p>
+
+                <pre><code><textarea>
+<h4 id="total_high"></h4>
+<h4 id="total_average"></h4>
+<h4 id="total_low"></h4></textarea></code></pre>
+
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Highlighting the highest risk categories</h4>
+                <p>Among the nine risk categories, users can only highlight one risk category that is the most risky, either Elevated 
+                    or High risk. Users can use <span class="code">div</span> with id in Table below to list the traits that are grouped in that 
+                    particular category with their respective page number.
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="code">elevated_details</span></td>
+                            <td>The list of traits that are grouped in Elevated risk with their respective page number.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="code">high_details</span></td>
+                            <td>The list of traits that are grouped in High risk with their respective page number.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>For example, to highlight the traits that are grouped in High risk category in summary HTML, the following line 
+                    should be included:
+                </p>
+
+                <pre><code><textarea><div id="high_details"></div></textarea></code></pre>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Highlighting other risk categories</h4>
+                <p>For other risk levels such as Slightly Elevated, Normal, Slightly Advantaged, Advantaged, Increased, Average 
+                    and Low risk, novoClinic will only print the total of traits detected for that particular level. 
+                    Table below shows the id that users may use in summary HTML for other risk levels.
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>ID</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="code">row_slight_elevated</span></td>
+                            <td>Total traits detected in Slightly Elevated risk. If there is no trait detected, 
+                                novoClinic will print out “None of the traits are grouped in slightly elevated risk.”
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="code">row_normal</span></td>
+                            <td>Total traits detected in Normal risk. If there is no trait detected, novoClinic will 
+                                print out “None of the traits are grouped in slightly normal risk.”
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="code">row_slight_advantage</span></td>
+                            <td>Total traits detected in Slightly Advantaged risk. If there is no trait detected, 
+                                novoClinic will print out “None of the traits are grouped in slightly advantaged risk.”
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="code">row_advantaged</span></td>
+                            <td>Total traits detected in Advantaged risk. If there is no trait detected, 
+                                novoClinic will print out “None of the traits are grouped in advantaged risk.”
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="code">row_increased</span></td>
+                            <td>Total traits detected in Increased risk. If there is no trait detected, 
+                                novoClinic will print out “None of the traits are grouped in slightly increased risk.”
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><span class="code">row_average</span></td>
+                            <td>Total traits detected in Average risk. If there is no trait detected, 
+                                novoClinic will print out “None of the traits are grouped in average risk.”
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><span class="code">row_low</span></td>
+                            <td>Total traits detected in Low risk. If there is no trait detected, 
+                                novoClinic will print out “None of the traits are grouped in low risk.”
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>For example, to briefly highlight other categories such as Average and Low risk in summary HTML, the 
+                    following lines can be included:
+                </p>
+
+                <pre><code><textarea>
+<h2>Average:</h2>
+<div id="row_average"></div>
+                    
+<h2>Low:</h2>
+<div id="row_low"></div></textarea></code></pre>
+
+            </div>
+
+            <!--------------------------------- TOC ---------------------------------------->
+            <div class="tabcontent" id="toc">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Table of Contents</h4>
+                <p>Users also can create Table of Contents HTML by simply adding the following line in HTML.</p>
+
+                <pre>
+                    <code><textarea>
+<table id="toc-page"></table></textarea></code>
+                </pre>
+
+                <p>The table will consist of two columns, listing the modules and traits with their respective
+                    page number in the report. The full example of Table of Content HTML is as follows:
+                </p>
+
+                <pre><code><textarea>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Table of Contents</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../novo.css" rel="stylesheet" type="text/css" media="all">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../toc.js"></script>
+</head>
+<body>
+    <h1>Table of Contents</h1>
+    <table id="toc-page"></table>
+
+    <div class="last-page"></div>
+</body>
+</html></textarea></code></pre>
+            </div>
+
+            <!--------------------------------- OTHERS---------------------------------------->
+            <div class="tabcontent" id="others">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Other General HTML templates</h4>
+                <p>This section will guide users on how to create a HTML file for the General category such 
+                    as summary and table of contents of the report. Please note that <span class="code">&lt;div class="last-page"&gt;&lt;/div&gt;</span> 
+                    must be included in every HTML file before the close of <span class="code">body</span> tag for novoClinic report 
+                    creation purposes. 
+                </p>
+
+                HTML:
+                <pre><code><textarea>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link href="../novo.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    
+    <!-- Add your content here. -->
+
+    <div class="last-page"></div>
+</body>
+</html></textarea></code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------------- MODULE ---------------------------------------->
+    <section class="secs" id="module">
+        <div class="container">
+            <h2>Module Template</h2>
+            <div class="content">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Basic structure of Module HTML template</h4>
+                <p>The Module HTML file consists of an overview of traits in a particular module 
+                    such as the total SNPs detected in a module, the percentage of SNPs reported, 
+                    the list of traits in a module and their respective risk categories. 
+                </p>
+                <pre><code><textarea>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NovoClinic</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/handlebars/dist/handlebars.js"></script>
+    <link href="../../novo.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <div id="xyz" class="east" media="print">
+        <script id="wellness" type="text/x-handlebars-template">
+
+            <!-- Your contents and placeholders are placed here -->
+
+        </script>
+    </div>
+    <div class="last-page"></div>
+    <script type="text/javascript" src="helpers.js"></script>
+    <script type="text/javascript" src="json.js"></script>
+</body>
+</html></textarea></code></pre>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Placeholders in Module HTML template</h4>
+                <p>Table below shows a list of placeholders users can include in the Module HTML file. 
+                    The placeholders must be placed inside their own helpers. Please note that every helpers must be closed with 
+                    <span class="code">{{/each}}</span>.
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Helper</th>
+                            <th>Placeholder</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="code">{{#each patient_info}}</span></td>
+                            <td><span class="code">{{patient_firstName}}<br>{{patient_lastName}}</span></td>
+                            <td>Patient's full name</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="code">{{#each patient_info}}</span></td>
+                            <td><span class="code">{{patient_MRNNumber}}</span></td>
+                            <td>Patient's ID</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="code">{{#each name}}</span></td>
+                            <td><span class="code">{{module_name}}</span></td>
+                            <td>Name of module.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td><span class="code">{{total_snps}}</span></td>
+                            <td>Total SNPs detected in a module.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="code">{{#each module_annotation}}</span></td>
+                            <td><span class="code">{{{description}}}</span></td>
+                            <td>The description/introduction of the module.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><span class="code">{{#each module_annotation}}</span></td>
+                            <td><span class="code">{{{assessment}}}</span></td>
+                            <td>The assessment of the module.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><span class="code">{{#each module_annotation}}</span></td>
+                            <td><span class="code">{{{module_risk_category}}}</span></td>
+                            <td>The risk category of the module.</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><span class="code">{{#each module_annotation}}</span></td>
+                            <td><span class="code">{{{recommendation}}}</span></td>
+                            <td>The recommendation of the module.</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{trait_name}}</span></td>
+                            <td>The name of the traits.</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{snps}}</span></td>
+                            <td>The percentage of SNPs reported for each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{{snps_percentage}}}</span></td>
+                            <td>The percentage of detected snps (with HTML elements).
+                                <br>Calculation: SNPs observed / Module SNPs</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{trait_risk_category}}</span></td>
+                            <td>Assessment/risk level of particular trait.</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{{risk_id}}}</span></td>
+                            <td>ID assigned for the HTML element of each risk category. It can be used if users 
+                                want to customize background color or text color of risk categories in CSS. For more 
+                                details, refer <a href="#optional">here</a>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Example of Module HTML</h4>
+
+                <pre><code><textarea>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NovoClinic</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/handlebars/dist/handlebars.js"></script>
+    <link href="../../novo.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+<body>
+    <div id="xyz" class="east" media="print">
+        <script id="wellness" type="text/x-handlebars-template">
+
+            {{#each name}}
+            <h1>{{module_name}}</h1>
+            {{/each}}
+
+            <div>
+                Total variants detected:
+                <h2>{{total_snps}}</h2>
+            </div>
+            <div>
+                {{#each counts}}
+                <p>Trait name: {{trait_name}}</p>
+                <p>Variants detected: {{snps}}%</p>
+                <p>Assessment: {{risk}}</p>
+                {{/each}}
+            </div>
+
+        </script>
+    </div>
+    <div class="last-page"></div>
+    <script type="text/javascript" src="helpers.js"></script>
+    <script type="text/javascript" src="json.js"></script>
+</body>
+</html>
+</textarea></code></pre>
+
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------------- TRAIT ---------------------------------------->
+    <section class="secs" id="trait">
+        <div class="container">
+            <h2>Trait Template</h2>
+            <div class="content">
+                <p>The Trait HTML file consists of details for each trait such as the description 
+                    of traits, the total of phenotype, gene and SNPs detected in particular trait, 
+                    and the list of phenotypes and variants. 
+                </p>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Placeholders in Trait HTML template</h4>
+                <p>Table below represents a list of placeholders that users can include in the Trait HTML file. 
+                    Please note that every helpers must be closed with <span class="code">{{/each}}</span>.
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Helper</th>
+                            <th>Placeholder</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{{trait_id}}}</span></td>
+                            <td>ID for each trait. Useful for navigating links to the desired trait section when viewing HTML.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{trait_name}}</span></td>
+                            <td>The name of the traits.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{trait_risk_category}}</span></td>
+                            <td>Risk category of particular trait.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{{risk_id}}}</span></td>
+                            <td>ID assigned for the HTML element of each risk level.It can be used if users want to customize 
+                                background color or text color of risk level in CSS. For more details, refer <a href="#optional">here</a>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{trait_description}}</span></td>
+                            <td>The introduction/description of each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{trait_recommendation}}</span></td>
+                            <td>The recommendation of each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{trait_assessment}}</span></td>
+                            <td>The assessment of each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{{img}}}</span></td>
+                            <td>Image of  each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{trait_risk_category}}</span></td>
+                            <td>Risk category of particular trait.</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{phenotype_count}}</span></td>
+                            <td>The counts of phenotypes for each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{gene_v_count}}</span></td>
+                            <td>The counts of genes for each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{snps_v_count}}</span></td>
+                            <td>The counts of SNPs for each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{{phenotype}}}</span></td>
+                            <td>The phenotypes list for each trait.</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{{variants_info}}}</span></td>
+                            <td>The variants list each trait which includes the RSID, impact factor, AF and Genotype.</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><span class="code">{{#each counts}}</span></td>
+                            <td><span class="code">{{genetic_variation}}</span></td>
+                            <td>The list of variants of each trait.
+                                <br>*Example output: variant_1, variant_2, variant_3
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Example of Trait HTML</h4>
+
+                <pre><code><textarea>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NovoClinic</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/handlebars/dist/handlebars.js"></script>
+</head>
+<body>
+    <div id="xyz" class="east" media="print">
+        <script id="wellness" type="text/x-handlebars-template">
+            {{#each counts}}
+            <section>
+                <h2 id="{{trait_id}}">{{trait_name}}</h2>
+                    <p>Total phenotypes: {{phenotype_count}}</p>
+                    <p>Total genes: {{gene_v_count}}</p>
+                    <p>Total SNPs: {{snps_v_count}}</p>
+                    
+                    <div>
+                        <h3>Phenotype list:</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Phenotype</th>
+                                    <th>Condition</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{{phenotype}}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <h3>Gene & SNPs list:</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Gene</th>
+                                    <th>SNP</th>
+                                    <th>Impact</th>
+                                    <th>AF</th>
+                                    <th>Genotype</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{{variants_info}}}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                {{each}}
+        </script>
+    </div>
+    <div class="last-page"></div>
+    <script type="text/javascript" src="helpers.js"></script>
+    <script type="text/javascript" src="json.js"></script>
+</body>
+</html></textarea></code></pre>
+
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------------- OPTIONALS ---------------------------------------->
+    <section class="secs" id="optional">
+        <div class="container">
+            <h2>Optionals</h2>
+            <div class="row">
+                <div style="margin: auto;">
+                    <button class="tablink2" onclick="openPage2('css', this, '#F2F2F2')" id="defaultOpen2"><i class="fab fa-css3-alt" style="font-size: 16px;"></i>&nbsp;&nbsp;&nbsp;CSS</button>
+                    <button class="tablink2" onclick="openPage2('bootstrap', this, '#F2F2F2')"><i class="fab fa-bootstrap" style="font-size: 16px;"></i>&nbsp;&nbsp;&nbsp;Bootstrap</button>
+                    <button class="tablink2" onclick="openPage2('icon', this, '#F2F2F2')"><i class="fab fa-font-awesome-flag" style="font-size: 16px;"></i>&nbsp;&nbsp;&nbsp;Icons</button>
+                    <button class="tablink2" onclick="openPage2('risk', this, '#F2F2F2')"><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;&nbsp;Risk category</button>
+                </div>
+            </div>
+
+            <!--------------------------------- CSS ---------------------------------------->
+            <div class="tabcontent2" id="css">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> CSS</h4>
+                <p>There are three ways to add CSS in your HTML:</p>
+                
+                <p><span class="bold">a. Inline CSS</span><br>
+                Users can include style attributes inside HTML elements. For example:</p>
+                <pre><code><textarea><p style="color: #000000;">Hello World.</p></textarea></code></pre>
+
+                <p><span class="bold">b. Internal CSS</span><br>
+                    Users can include the <span class="code">style</span> element in the <span class="code">head</span> section. For example:</p>
+                <pre><code><textarea>
+<head>
+    <title>NovoClinic</title>
+    <style>
+        .hello {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <p class="hello">Hello World.</p>
+</body></textarea></code></pre>
+
+                <p><span class="bold">c. External CSS</span><br>
+                Users can include a <span class="code">link</span> in the <span class="code">head</span> section to link external CSS file. For example:</p>
+                
+                HTML:
+                <pre><code><textarea>
+<head>
+    <title>NovoClinic</title>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <p class="hello">Hello World.</p>
+</body></textarea></code></pre>
+
+                CSS (style.css):
+                <pre><code><textarea>
+.hello {
+    color: #000000;
+}</textarea></code></pre>
+
+            </div>
+
+            <!--------------------------------- BOOTSTRAP ---------------------------------------->
+            <div class="tabcontent2" id="bootstrap">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Bootstrap</h4>
+                <p>The compiled CSS and Javascript of Bootstrap v4.5.3 are already installed in novoClinic. 
+                    To use the Bootstrap’s features, the following lines must be included in the <span class="code">head</span> section:
+                </p>
+
+                <span class="bold">a. For General HTML:</span>
+
+                <pre><code><textarea>
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script href="../bootstrap/js/bootstrap.min.js"></script></textarea></code></pre>
+
+                <span class="bold">b. For Module and Trait HTML:</span>
+                <pre><code><textarea>
+<link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script href="../../bootstrap/js/bootstrap.min.js"></script></textarea></code></pre>
+            
+                <p>For more information on the Bootstrap usages, users are advised to refer to their 
+                    <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">documentation</a>
+                </p>
+            </div>
+
+
+            <!--------------------------------- ICONS ---------------------------------------->
+            <div class="tabcontent2" id="icon">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Icons (Font Awesome v5.15.1)</h4>
+                <p>The simplest way to include icons into a HTML template is by using icon libraries. 
+                    There are many free icon libraries available such as Bootstrap, Font Awesome and Google Icons. 
+                    This section will guide users on how to include icons of Font Awesome v5.15.1 in the HTML template 
+                    file without any download or installation.
+                </p>
+
+                <p>First, add the following line into the <span class="code">head</span> section:</p>
+
+                <span class="bold">a. For General HTML:</span>
+                <pre><code><textarea><link href="../node_modules/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet"></textarea></code></pre>
+
+                <span class="bold">b. For Module and Trait HTML:</span>
+                <pre><code><textarea><link href="../../node_modules/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet"></textarea></code></pre>
+
+                <p>Next, users can add their icon of interest in the <span class="code">body</span> section. For example:</p>
+                <pre><code><textarea><i class="fas fa-cloud"></i></textarea></code></pre>
+
+                <p>For a more list of Font Awesome’s icons that users can use, refer <a href="https://fontawesome.com/">here</a>.</p>
+            </div>
+
+            <!--------------------------------- RISK CATEGORY ---------------------------------------->
+            <div class="tabcontent2" id="risk">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Risk category</h4>
+                <p>Users can also customize the background color or text color of each risk level in CSS by using 
+                    <span class="code">{{{risk_id}}}</span> placeholder in HTML. IDs for each risk level that will be used in CSS are listed 
+                    in Table below.
+                </p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>ID</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="code">elevated</span></td>
+                            <td>ID for Elevated risk</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="code">slightlyelevated</span></td>
+                            <td>ID for Slightly Elevated risk</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="code">normal</span></td>
+                            <td>ID for Normal risk</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="code">slightlyadvantaged</span></td>
+                            <td>ID for Slightly Advantaged risk</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="code">advantaged</span></td>
+                            <td>ID for Advantaged risk</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><span class="code">high</span></td>
+                            <td>ID for High risk</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><span class="code">increased</span></td>
+                            <td>ID for Increased risk</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><span class="code">average</span></td>
+                            <td>ID for Average risk</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><span class="code">low</span></td>
+                            <td>ID for Low risk</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>The usage of <span class="code">{{{risk_id}}}</span> (high, average and low risk) and their respective IDs 
+                    are shown in the example below.
+                </p>
+                HTML:
+                <pre><code><textarea>
+<div id="xyz" class="east" media="print">
+    <script id="wellness" type="text/x-handlebars-template">
+        {{#each counts}}
+        <div id="{{{risk_id}}}">{{trait_risk_category}}</div>
+        {{/each}}
+    </script>
+</div></textarea></code></pre>
+
+                CSS:
+                <pre><code><textarea>
+#high {
+    background-color: red;
+    color: white;
+}
+                        
+#average {
+    background-color: yellow;
+    color: white;
+}
+                        
+#low {
+    background-color: green;
+    color: white;
+}</textarea></code></pre>
+            </div>
+        </div>
+    </section>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></i></button>
+
+</body>
+<script src="script.js"></script>
+
+</html>

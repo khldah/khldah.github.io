@@ -1,0 +1,204 @@
+html, body {
+    scroll-behavior: smooth;
+    width: 100%;
+    -webkit-print-color-adjust: exact;
+    /* overflow-x: hidden; */
+    font-family: 'Roboto';
+}
+
+.row {
+    width: 100%;
+    margin: auto;
+}
+
+.header {
+    height: 100vH;
+    /* width: 100vH; */
+    margin-left:0 !important;
+    margin-right: 0 !important;
+    background: linear-gradient(to right,#355C7D, #6C5B7B, #C06C84);
+    /* display:flex; */
+    padding: 40px;
+}
+
+.header .container{
+    height: 100%;
+    margin: auto;
+}
+
+.header h1{
+    font-family: Roboto;
+    font-size: 40px;
+    color: #f0f0f0;
+}
+
+.header p{
+    margin-bottom: 30px;
+    font-size: 13px;
+}
+
+
+.ver-center {
+    margin:auto;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.ver-center2{
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-md-3{
+    padding: 10px;
+}
+
+
+.btn {
+    margin: auto;
+    color: #f0f0f0;
+    width: 100%;
+    border: 2px solid  #f0f0f0;
+    border-radius: 0px;
+    transition-duration: 0.4s;
+    transition: all .2s ease-in-out;
+    /* min-height: 105px; */
+    position: relative;
+}
+
+.btn:hover {
+    background-color:  #3f2c6157;
+    border: 2px solid  #3f2c6104;
+    color: #f0f0f0;
+
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn h6{
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+    position: relative;
+    margin-top: 10px;
+}
+
+.secs {
+    padding: 40px 10px 10px 10px;
+}
+
+.secs h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    /* letter-spacing: 2px; */
+    background: linear-gradient(to right, #355C7D, #C06C84);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* margin-bottom: 20px; */
+}
+
+button {
+    outline: none !important;
+}
+
+.tablink:focus, .tablink2:focus {
+    outline: none !important;
+}
+
+.tablink, .tablink2 {
+    background-color: #fff;
+    color: #848484;
+    /* float: left; */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 15px;
+    margin: 5px;
+    font-size: 14px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    border-radius: 17px;
+}
+  
+.tablink:hover, .tablink2:hover {
+    background-color: #F2F2F2;
+}
+
+.tabcontent, .tabcontent2 {
+    display: none;
+    padding: 50px 50px 0px 50px;
+    height: 100%;
+    color: #404040;
+    font-family: 'Roboto';
+}
+
+.content {
+    padding: 5px 50px;
+    color: #404040;
+    font-family: 'Roboto';
+}
+
+pre code{
+    margin: 15px 50px;
+    border-radius: 5px !important;
+}
+
+.secs h4 {
+    font-weight: 700;
+    color: #355C7D;
+    margin-top: 40px;
+    /* background: linear-gradient(to right, #355C7D, #C06C84);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.code{
+    font-family: Consolas;
+    font-size: 13px;
+    background-color: #f3f3f3;
+    color: #ef476f;
+    border-radius: 3px;
+    padding: 2px;
+    white-space: nowrap;
+}
+
+.table {
+    margin: 30px auto;
+    width: 80%;
+}
+
+.bold{
+    font-weight: 700;
+    color: #355C7D;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgba(192, 192, 192, 0.438); /* Set a background color */
+    color: #355C7D; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 5px; /* Some padding */
+    border-radius: 23px; /* Rounded corners */
+    font-size: 20px; /* Increase font size */
+    width: 45px;
+    height: 45px;
+    font-weight: 700;
+  }
+  
+#myBtn:hover {
+    background-color: #355C7D; /* Add a dark-grey background on hover */
+    color: #f0f0f0;
+}
