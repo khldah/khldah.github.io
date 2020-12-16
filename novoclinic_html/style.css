@@ -6,6 +6,14 @@ html, body {
     font-family: 'Roboto';
 }
 
+body{
+    padding-bottom: 50px;
+}
+
+img {
+    pointer-events: none;
+}
+
 .row {
     width: 100%;
     margin: auto;
@@ -201,4 +209,34 @@ pre code{
 #myBtn:hover {
     background-color: #355C7D; /* Add a dark-grey background on hover */
     color: #f0f0f0;
+}
+
+.add-notes{
+    background-color: #F4F6F7;
+    padding: 15px;
+    text-align: justify;
+}
+
+.add-notes h5{
+    color: #355C7D;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.important-notes{
+    background-color:#FEF9E7;
+    padding: 15px;
+    text-align: justify;
+}
+
+.important-notes h5{
+    color: #355C7D;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
