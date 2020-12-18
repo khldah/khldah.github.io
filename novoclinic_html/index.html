@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="ocean.css">
 
     <!-- Bootstrap & CSS -->
-    <!-- <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script href="../bootstrap/js/bootstrap.min.js"></script> -->
+    <!-- <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <script href="../bootstrap/js/bootstrap.min.js"></script> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
@@ -37,10 +37,12 @@
     <section class="header">
         <div class="container">
             <div class="row ver-center" style="margin: auto 0;">
+                
                 <div class="col-sm-5">
                     <img src="images/html.png" style="width: 115%;">
                 </div>
                 <div class="col-sm-7" style="margin: auto;">
+
                     <h1>NovoClinic HTML Manual v1.0</h1>
                     <p>A simple guide to create HTML template for NovoClinic's wellness report.
 
@@ -126,6 +128,19 @@
                         </p>
                     </div>
                 </div>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Requirements</h4>
+                <ul>
+                    <li>jQuery v3.5.1 (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><script src="../../node_modules/jquery/dist/jquery.min.js"></script></textarea></code></pre>
+                    
+                    <li> External <span class="code">novo.css</span> file (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><link href="../../novo.css" rel="stylesheet" type="text/css" media="all"></textarea></code></pre>
+
+                    <li><span class="code">last-page</span> class (before the close of <span class="code">body</span> tag):</li>
+                    <pre><code><textarea><div class="last-page"></div></textarea></code></pre>
+
+                </ul>
 
                 <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Inserting total number of
                     traits detected in each risk category</h4>
@@ -265,7 +280,14 @@
                     should be included:
                 </p>
 
-                <pre><code><textarea><div id="high_details"></div></textarea></code></pre>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <pre><code><textarea><div id="high_details"></div></textarea></code></pre>
+                    </div>
+                    <div class="col-sm-7">
+                        <img src="images/high_details2.png" style="width: 90%">
+                    </div>
+                </div>
 
                 <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Highlighting other risk
                     categories</h4>
@@ -339,6 +361,9 @@
                 <p>For example, to briefly highlight other categories such as Average and Low risk in summary HTML, the
                     following lines can be included:
                 </p>
+                
+                <div class="row">
+                    <div class="col-sm-6">
 
                 <pre><code><textarea>
 <h2>Average:</h2>
@@ -347,6 +372,19 @@
 <h2>Low:</h2>
 <div id="row_low"></div></textarea></code></pre>
 
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="images/row_average_low2.png" style="width: 90%">
+                    </div>
+                </div>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Example output of summary</h4>
+                <p>Figure below demonstrates the example output of Summary HTML of the report using the HTML IDs provided to summarise 
+                    the risk categories.
+                </p>
+
+                <img src="images/summary_report.png" style="width: 80%; margin: 0 auto; display: block;">
+
             </div>
 
             <!--------------------------------- TOC ---------------------------------------->
@@ -354,10 +392,21 @@
                 <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Table of Contents</h4>
                 <p>Users also can create Table of Contents HTML by simply adding the following line in HTML.</p>
 
-                <pre>
-                    <code><textarea>
-<table id="toc-page"></table></textarea></code>
-                </pre>
+                <pre><code><textarea>
+<table id="toc-page"></table></textarea></code></pre>
+
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Requirements</h4>
+                <ul>
+                    <li>jQuery v3.5.1 (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><script src="../../node_modules/jquery/dist/jquery.min.js"></script></textarea></code></pre>
+                    
+                    <li> External <span class="code">novo.css</span> file (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><link href="../../novo.css" rel="stylesheet" type="text/css" media="all"></textarea></code></pre>
+
+                    <li><span class="code">last-page</span> class (before the close of <span class="code">body</span> tag):</li>
+                    <pre><code><textarea><div class="last-page"></div></textarea></code></pre>
+
+                </ul>
 
                 <p>The table will consist of two columns, listing the modules and traits with their respective
                     page number in the report. The full example of Table of Content HTML is as follows:
@@ -421,6 +470,29 @@
         <div class="container">
             <h2>Module Template</h2>
             <div class="content">
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Requirements</h4>
+
+                <ul>
+                    <li>jQuery v3.5.1 (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><script src="../../node_modules/jquery/dist/jquery.min.js"></script></textarea></code></pre>
+                    
+                    <li>Handlebars v4.7.6 (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><script src="../../node_modules/handlebars/dist/handlebars.js"></script></textarea></code></pre>
+
+                    <li> External <span class="code">novo.css</span> file (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><link href="../../novo.css" rel="stylesheet" type="text/css" media="all"></textarea></code></pre>
+
+                    <li><span class="code">last-page</span> class (before the close of <span class="code">body</span> tag):</li>
+                    <pre><code><textarea><div class="last-page"></div></textarea></code></pre>
+
+                    <li>External <span class="code">helpers.js</span> file (before the close of <span class="code">body</span> tag):</li>
+                    <pre><code><textarea><script type="text/javascript" src="helpers.js"></script></textarea></code></pre>
+
+                    <li>External <span class="code">json.js</span> file (before the close of <span class="code">body</span> tag):</li>
+                    <pre><code><textarea><script type="text/javascript" src="json.js"></script></textarea></code></pre>
+
+                </ul>
+
                 <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Basic structure of Module HTML
                     template</h4>
                 <p>The Module HTML file consists of an overview of traits in a particular module
@@ -622,6 +694,28 @@
                     and the list of phenotypes and variants.
                 </p>
 
+                <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Requirements</h4>
+
+                <ul>
+                    <li>jQuery v3.5.1 (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><script src="../../node_modules/jquery/dist/jquery.min.js"></script></textarea></code></pre>
+                    
+                    <li>Handlebars v4.7.6 (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><script src="../../node_modules/handlebars/dist/handlebars.js"></script></textarea></code></pre>
+
+                    <li> External <span class="code">novo.css</span> file (inside the <span class="code">head</span> tag):</li>
+                    <pre><code><textarea><link href="../../novo.css" rel="stylesheet" type="text/css" media="all"></textarea></code></pre>
+
+                    <li><span class="code">last-page</span> class (before the close of <span class="code">body</span> tag):</li>
+                    <pre><code><textarea><div class="last-page"></div></textarea></code></pre>
+
+                    <li>External <span class="code">helpers.js</span> file (before the close of <span class="code">body</span> tag):</li>
+                    <pre><code><textarea><script type="text/javascript" src="helpers.js"></script></textarea></code></pre>
+
+                    <li>External <span class="code">json.js</span> file (before the close of <span class="code">body</span> tag):</li>
+                    <pre><code><textarea><script type="text/javascript" src="json.js"></script></textarea></code></pre>
+                </ul>
+
                 <h4><i class="fas fa-code" aria-hidden="true" style="color:#C06C84;"></i> Placeholders in Trait HTML template</h4>
                 <div class="row">
                     <div class="col-sm-7">
@@ -768,44 +862,44 @@
             {{#each counts}}
             <section>
                 <h2 id="{{trait_id}}">{{trait_name}}</h2>
-                    <p>Total phenotypes: {{phenotype_count}}</p>
-                    <p>Total genes: {{gene_v_count}}</p>
-                    <p>Total SNPs: {{snps_v_count}}</p>
+                <p>Total phenotypes: {{phenotype_count}}</p>
+                <p>Total genes: {{gene_v_count}}</p>
+                <p>Total SNPs: {{snps_v_count}}</p>
                     
-                    <div>
-                        <h3>Phenotype list:</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Phenotype</th>
-                                    <th>Condition</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{{phenotype}}}
-                            </tbody>
-                        </table>
-                    </div>
+                <div>
+                    <h3>Phenotype list:</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Phenotype</th>
+                                <th>Condition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{{phenotype}}}
+                        </tbody>
+                    </table>
+                </div>
 
-                    <div>
-                        <h3>Gene & SNPs list:</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Gene</th>
-                                    <th>SNP</th>
-                                    <th>Impact</th>
-                                    <th>AF</th>
-                                    <th>Genotype</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{{variants_info}}}
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-                {{each}}
+                <div>
+                    <h3>Gene & SNPs list:</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Gene</th>
+                                <th>SNP</th>
+                                <th>Impact</th>
+                                <th>AF</th>
+                                <th>Genotype</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{{variants_info}}}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            {{each}}
         </script>
     </div>
     <div class="last-page"></div>
@@ -949,6 +1043,7 @@
                             <th>No.</th>
                             <th>ID</th>
                             <th>Description</th>
+                            <th>Default color</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -956,46 +1051,55 @@
                             <td>1</td>
                             <td><span class="code">elevated</span></td>
                             <td>ID for Elevated risk</td>
+                            <td><span class="color-code" style="background-color:#F76C6C;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#F76C6C</span></td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td><span class="code">slightlyelevated</span></td>
                             <td>ID for Slightly Elevated risk</td>
+                            <td><span class="color-code" style="background-color:#FEB546;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#FEB546</span></td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td><span class="code">normal</span></td>
                             <td>ID for Normal risk</td>
+                            <td><span class="color-code" style="background-color:#3498DB;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#3498DB</span></td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td><span class="code">slightlyadvantaged</span></td>
                             <td>ID for Slightly Advantaged risk</td>
+                            <td><span class="color-code" style="background-color:#64b6ac;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#64B6AC</span></td>
                         </tr>
                         <tr>
                             <td>5</td>
                             <td><span class="code">advantaged</span></td>
                             <td>ID for Advantaged risk</td>
+                            <td><span class="color-code" style="background-color:#2ba84a;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#2BA84A</span></td>
                         </tr>
                         <tr>
                             <td>6</td>
                             <td><span class="code">high</span></td>
                             <td>ID for High risk</td>
+                            <td><span class="color-code" style="background-color:#F76C6C;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#F76C6C</span></td>
                         </tr>
                         <tr>
                             <td>7</td>
                             <td><span class="code">increased</span></td>
                             <td>ID for Increased risk</td>
+                            <td><span class="color-code" style="background-color:#FEB546;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#FEB546</span></td>
                         </tr>
                         <tr>
                             <td>8</td>
                             <td><span class="code">average</span></td>
                             <td>ID for Average risk</td>
+                            <td><span class="color-code" style="background-color:#FEB546;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#FEB546</span></td>
                         </tr>
                         <tr>
                             <td>9</td>
                             <td><span class="code">low</span></td>
                             <td>ID for Low risk</td>
+                            <td><span class="color-code" style="background-color:#3498DB;">&nbsp;&nbsp;</span>&nbsp;&nbsp;<span class="code">#3498DB</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1033,6 +1137,13 @@
             </div>
         </div>
     </section>
+
+    <div class="row" style="background-color: rgba(226, 225, 225, 0.452);">
+        <div style="text-align:center; margin: auto;">
+            <img src="images/novoclinic_logo.png" style="width:100px;">
+            <img src="images/mygenome.png" style="width:100px;">
+        </div>
+    </div>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></i></button>
 

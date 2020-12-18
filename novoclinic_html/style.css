@@ -7,7 +7,7 @@ html, body {
 }
 
 body{
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 
 img {
@@ -27,6 +27,7 @@ img {
     background: linear-gradient(to right,#355C7D, #6C5B7B, #C06C84);
     /* display:flex; */
     padding: 40px;
+    text-align: center;
 }
 
 .header .container{
@@ -240,3 +241,9 @@ pre code{
     text-transform: uppercase;
     margin-bottom: 10px;
 }
+
+.color-code{
+    font-family: Consolas;
+    border-radius: 2px;
+}
+
