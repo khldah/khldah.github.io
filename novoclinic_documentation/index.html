@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NovoClinic Documentation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
+    <link rel="stylesheet" href="ocean.css">
+
+    <!-- Bootstrap & CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Google Fonts & icons -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a><img src="images/novoclinic_logo2.png" style="width: 60px;"></a>
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="mynav()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!--------------------------------- HEADER ---------------------------------------->
+    <section class="header">
+
+        <div class="container">
+            <h1>NovoClinic Documentation v1.0</h1>
+            <p>
+                A guide on how to use the basic functionalities in novoClinic to run the analysis 
+                pipelines associated with the clinical and wellness models.
+            </p>
+
+            <div class="main-search">
+                <form class="search" action="/action_page.php" style="margin:auto; width: 60%;">
+                    <input type="text" placeholder="Search" name="search2">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!--------------------------------- OVERVIEW ---------------------------------------->
+    <section class="overview">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-sm-3 hor-center"><img src="images/startup.png" style="width: 45px;"></div>
+                            <div class="col-sm-9">
+                                <h4>Getting started</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-sm-3 hor-center"><img src="images/feature.png" style="width: 45px;"></div>
+                            <div class="col-sm-9">
+                                <h4>Key features</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-sm-3 hor-center"><img src="images/pipeline3.png" style="width: 45px;"></div>
+                            <div class="col-sm-9">
+                                <h4>Pipelines</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-sm-3 hor-center"><img src="images/annotate.png" style="width: 45px;"></div>
+                            <div class="col-sm-9">
+                                <h4>Annotation</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-sm-3 hor-center"><img src="images/database.png" style="width: 45px;"></div>
+                            <div class="col-sm-9">
+                                <h4>Integrated database</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="grid" onclick="location.href='html_template.html'";>
+                        <div class="row">
+                            <div class="col-sm-3 hor-center"><img src="images/html.png" style="width: 45px;"></div>
+                            <div class="col-sm-9">
+                                <h4>HTML Template</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                    tempor incididunt ut labore et dolore magna aliqua. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
