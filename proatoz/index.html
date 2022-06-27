@@ -1,0 +1,448 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+	<div class="min-h-full">
+		<nav class="bg-gray-800">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center justify-between h-16">
+					<div class="flex items-center">
+						<div class="flex-shrink-0">
+							<img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+						</div>
+						<div class="hidden md:block">
+							<div class="ml-10 flex items-baseline space-x-4">
+								<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+								<a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+								<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+								<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+								<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+								<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+							</div>
+						</div>
+					</div>
+					<div class="hidden md:block">
+						<div class="ml-4 flex items-center md:ml-6">
+							<button type="button" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+								<span class="sr-only">View notifications</span>
+								<!-- Heroicon name: outline/bell -->
+								<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+								</svg>
+							</button>
+				
+							<!-- Profile dropdown -->
+							<div class="ml-3 relative">
+								<div>
+									<button type="button" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+										<span class="sr-only">Open user menu</span>
+										<img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="-mr-2 flex md:hidden">
+						<!-- Mobile menu button -->
+						<button type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+							<span class="sr-only">Open main menu</span>
+							<svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+							<svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		
+			<!-- Mobile menu, show/hide based on menu state. -->
+			<div class="md:hidden" id="mobile-menu">
+				<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+					<a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+					<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+					<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+					<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+					<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
+				</div>
+				<div class="pt-4 pb-3 border-t border-gray-700">
+					<div class="flex items-center px-5">
+						<div class="flex-shrink-0">
+						<img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+						</div>
+						<div class="ml-3">
+						<div class="text-base font-medium leading-none text-white">Tom Cook</div>
+						<div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
+						</div>
+						<button type="button" class="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+						<span class="sr-only">View notifications</span>
+						<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+						</svg>
+						</button>
+					</div>
+					<div class="mt-3 px-2 space-y-1">
+						<a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Your Profile</a>
+						<a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Settings</a>
+						<a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Sign out</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	
+		<header>
+			<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+				<h1 class="text-3xl font-bold text-gray-900">Page Setup</h1>
+			</div>
+		</header>
+
+		<!-- Form -->
+		<main >
+			<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+				<form action="#" method="POST">
+					<div>
+						<div class="md:grid md:grid-cols-3 md:gap-6">
+							<div class="md:col-span-1">
+								<div class="px-4 sm:px-0">
+									<h3 class="text-lg font-medium leading-6 text-gray-900">Size</h3>
+									<p class="mt-1 text-sm text-gray-600">Determine the size of the paper.</p>
+								</div>
+							</div>
+							<div class="mt-5 md:mt-0 md:col-span-2">
+								<!-- <form action="#" method="POST"> -->
+									<div class="shadow sm:rounded-md sm:overflow-hidden">
+										<div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+										
+											<div class="col-span-6 sm:col-span-3">
+												<label for="size" class="block text-sm font-medium text-gray-700">Size of paper</label>
+												<select id="size" name="size" autocomplete="size" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+													<option>A0: L 841mm x H 1188mm</option>
+													<option>A1: L 594mm x H 841mm</option>
+													<option>A2: L 420mm x H 594mm</option>
+													<option>A3: L 297mm x H 420mm</option>
+													<option selected>A4: L 210mm x H 297mm</option>
+													<option>Custom</option>
+												</select>
+											</div>  
+
+											<div class="grid grid-cols-6 gap-6">
+												<div class="col-span-6 sm:col-span-3">
+													<label for="length" class="block text-sm font-medium text-gray-700">Length</label>
+													<input type="text" name="length" id="length" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md py-2 px-3">
+												</div>
+												<div class="col-span-6 sm:col-span-3">
+													<label for="height" class="block text-sm font-medium text-gray-700">Height</label>
+													<input type="text" name="height" id="height"  class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-gray-300 rounded-md py-2 px-3">
+												</div>
+											</div>
+
+											<div class="col-span-6 sm:col-span-3">
+												<label for="layout" class="block text-sm font-medium text-gray-700">Layout</label>
+												<select id="layout" name="layout" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+													<option>Potrait</option>
+													<option>Landscape</option>
+												</select>
+											</div> 	  
+										</div>
+										
+									</div>
+								<!-- </form> -->
+							</div>
+						</div>
+					</div>
+					
+					<div class="hidden sm:block" aria-hidden="true">
+						<div class="py-5">
+						<div class="border-t border-gray-200"></div>
+						</div>
+					</div>
+					
+					<div class="mt-10 sm:mt-0">
+						<div class="md:grid md:grid-cols-3 md:gap-6">
+						<div class="md:col-span-1">
+							<div class="px-4 sm:px-0">
+							<h3 class="text-lg font-medium leading-6 text-gray-900">Upload background</h3>
+							<p class="mt-1 text-sm text-gray-600">Upload a background image of the template.</p>
+							</div>
+						</div>
+						<div class="mt-5 md:mt-0 md:col-span-2">
+							<form action="#" method="POST">
+							<div class="shadow overflow-hidden sm:rounded-md">
+								<div class="px-4 py-5 bg-white sm:p-6">
+
+									<div>
+										<label class="block text-sm font-medium text-gray-700"> Background photo </label>
+										<div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+											<div class="space-y-1 text-center">
+												<svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+												<path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+												</svg>
+												<div class="flex text-sm text-gray-600">
+												<label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+													<span>Upload a file</span>
+													<input id="file-upload" name="file-upload" type="file" class="sr-only">
+												</label>
+												<p class="pl-1">or drag and drop</p>
+												</div>
+												<p class="text-xs text-gray-500">PNG, JPG up to 10MB</p>
+											</div>
+										</div>
+										<p class="mt-1 text-sm text-gray-400">
+											* Please make sure the width and height of the background image is similar to the selected paper size.
+										</p>
+									</div>					  
+								</div>						
+							</div>
+							</form>
+						</div>
+						</div>
+					</div>
+					
+					<!-- <div class="py-5 bg-gray-50 text-right px-0">
+						<button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+							Cancel
+						</button>
+						<a href="create_content.html">
+							<button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+								Save & continue 
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+									<path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+								</svg>
+							</button>
+						</a>
+					</div> -->
+				</form>
+			</div>
+		</main>
+
+
+		<div class="hidden sm:block" aria-hidden="true">
+			<div class="py-20">
+			<div class="border-t border-gray-200"></div>
+			</div>
+		</div>
+
+
+		<header>
+			<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+				<h1 class="text-3xl font-bold text-gray-900">Create content</h1>
+                <p class="text-gray-500 text-sm">Create content of template by simply dragging the elements on the sidebar to the template.</p>
+			</div>
+            
+		</header>
+
+        <main>
+            <div class="max-w-7xl mx-auto pb-6 sm:px-6 lg:px-8">
+                <div class="pb-5 text-right px-0">
+                    <!-- <a id="generatepdf" href="#"> -->
+                        <button onclick="saveDoc()"  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd" />
+                            </svg>
+                            Generate PDF
+                        </button>
+                    <!-- </a> -->
+                </div>
+
+                <div class="md:grid md:grid-cols-4 md:gap-6">
+                    <div class="md:col-span-1">
+                        <div class="px-4 sm:px-0 mb-10">
+                            <h3 class="text-lg font-medium leading-6 text-gray-900">Basic</h3>
+                            <!-- Draggable Content -->
+                            <div class="bg-white shadow sm:rounded-md p-2 my-3 grid grid-cols-4 hover:scale-105 duration-200" draggable="true">
+                                <div class="col-span-1">
+                                    <div class="w-14 h-14 bg-gray-100 sm:rounded-md flex text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-auto" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="col-span-3 flex">
+                                    <div class="my-auto">
+                                        <h4 class="text-md font-medium leading-6">Rich Text</h4>
+                                        <p class="text-gray-500 text-xs">Single or multiline text area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow sm:rounded-md p-2 my-3 grid grid-cols-4 hover:scale-105 duration-200" draggable="true">
+                                <div class="col-span-1">
+                                    <div class="w-14 h-14 bg-gray-100 sm:rounded-md flex text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-auto" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="col-span-3 flex">
+                                    <div class="my-auto">
+                                        <h4 class="text-md font-medium leading-6">Image</h4>
+                                        <p class="text-gray-500 text-xs">Upload an image file.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow sm:rounded-md p-2 my-3 grid grid-cols-4 hover:scale-105 duration-200" draggable="true">
+                                <div class="col-span-1">
+                                    <div class="w-14 h-14 bg-gray-100 sm:rounded-md flex text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-auto" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="col-span-3 flex">
+                                    <div class="my-auto">
+                                        <h4 class="text-md font-medium leading-6">Draw</h4>
+                                        <p class="text-gray-500 text-xs">Draw a line.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-4 sm:px-0">
+                            <h3 class="text-lg font-medium leading-6 text-gray-900">Advanced</h3>
+                            <!-- Draggable Content -->
+                            <div class="bg-white shadow sm:rounded-md p-2 my-3 grid grid-cols-4 hover:scale-105 duration-200" draggable="true">
+                                <div class="col-span-1">
+                                    <div class="w-14 h-14 bg-gray-100 sm:rounded-md flex text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-auto" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="col-span-3 flex">
+                                    <div class="my-auto">
+                                        <h4 class="text-md font-medium leading-6">Date</h4>
+                                        <p class="text-gray-500 text-xs">Select date from a datepicker.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow sm:rounded-md p-2 my-3 grid grid-cols-4 hover:scale-105 duration-200" draggable="true">
+                                <div class="col-span-1">
+                                    <div class="w-14 h-14 bg-gray-100 sm:rounded-md flex text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="m-auto" width="24" height="24" fill="currentColor">
+                                            <path d="M9 22h1v-2h-.989C8.703 19.994 6 19.827 6 16c0-1.993-.665-3.246-1.502-4C5.335 11.246 6 9.993 6 8c0-3.827 2.703-3.994 3-4h1V2H8.998C7.269 2.004 4 3.264 4 8c0 2.8-1.678 2.99-2.014 3L2 13c.082 0 2 .034 2 3 0 4.736 3.269 5.996 5 6zm13-11c-.082 0-2-.034-2-3 0-4.736-3.269-5.996-5-6h-1v2h.989c.308.006 3.011.173 3.011 4 0 1.993.665 3.246 1.502 4-.837.754-1.502 2.007-1.502 4 0 3.827-2.703 3.994-3 4h-1v2h1.002C16.731 21.996 20 20.736 20 16c0-2.8 1.678-2.99 2.014-3L22 11z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="col-span-3 flex">
+                                    <div class="my-auto">
+                                        <h4 class="text-md font-medium leading-6">Placeholder</h4>
+                                        <p class="text-gray-500 text-xs">Pull a data from the database.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="mt-5 md:mt-0 md:col-span-3">
+                        
+                        <!-- Container for background image -->
+                        <div class="shadow sm:rounded-md sm:overflow-hidden">
+
+                            <!-- 
+                                The image is depending on what user has uploaded in the form. 
+                                I am using this image as a mockup to see how it will fit on the paper size.
+
+                                The background image shall be changed to variable/placeholder.
+                            -->
+								<div id="paper_content" class="paper_content bg-white w-full h-full" style="background: url('invoice_background.jpg')">
+                            <!-- <div id="paper_content" class="paper_content bg-white w-full h-full"> -->
+                                <!-- 
+                                    This is to get the div having the same height with the page background.
+                                 -->
+                                <img src="invoice_background.jpg" class="w-full" style="visibility:hidden !important"/>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+
+
+
+
+
+		
+	</div>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="text/javascript">
+
+        window.jsPDF = window.jspdf.jsPDF;
+
+        // jsPDF(orientation, unit, format)
+
+        // Potrait, in mm, size A4
+        // var pdf = new window.jsPDF('p', 'pt', 'a4');
+
+
+        // Landscape, in mm, size A4
+        // var pdf = new window.jsPDF('l', 'mm', 'a4');
+
+        // Potrait, in mm, 297mm wide, 210mm height.
+        // var pdf = new window.jsPDF('p', 'mm', [297, 210]);
+
+       
+    
+		function saveDoc() {
+            // window.html2canvas = html2canvas
+            const doc = document.getElementById('paper_content');
+    
+            // if (doc) {
+            //     pdf.html(doc).then(() => pdf.save('output.pdf'));
+            // }
+
+
+			html2canvas(doc, {quality: 4, scale: 3}).then((canvas) => {
+				
+				var img=canvas.toDataURL("image/jpeg");
+				var pdf = new window.jsPDF('p', 'mm', 'a4');
+				var imageProps = pdf.getImageProperties(img);
+				var pdfWidth = pdf.internal.pageSize.getWidth();
+				var pdfHeight = (imageProps.height * pdfWidth)/imageProps.width;
+				pdf.addImage(img, 'PNG', 0, 0, pdfWidth, pdfHeight);
+				pdf.save('test.pdf')
+			})
+
+				// var img=canvas.toDataURL("image/jpeg");
+				// // var doc = new window.jsPDF('p', 'pt', 'a4');
+				// var pdf = new window.jsPDF('p', 'pt', 'a4');
+				// 	pdf.addImage(img,'JPEG',20,20);
+				// 	pdf.save('test.pdf');
+				// }
+
+			// });
+			
+        }
+
+		// function saveDoc() {
+		// 	var doc = new window.jsPDF('l', 'mm', 'a4');
+		// 	var canvas = document.querySelector('#paper_content');
+		// 	var canvasImg = canvas.toDataURL('image/PNG');
+		// 	doc.addImage(canvasImg,'PNG', 70,700,1000,300 ); //left, from above, width, height
+		// 	doc.addHTML($(id_page),function(){
+		// 	doc.save('test.pdf');
+		// 	});
+
+		// }
+
+
+	</script>
+
+
+
+</body>
+</html>

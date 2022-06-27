@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.paper_content {
+    background-size: 100%;
+    background-size: cover !important;
+    background-repeat: repeat-y;
+    /* border: 2px solid red; */
+    background-position: center center;
+    /* width: 8.26in !important; */
+    width: 100%;
+    /* min-height: 100vH; */
+    -webkit-print-color-adjust: exact !important;
+}
+
+
+/* For A4 size */
+/* @media print {
+    .paper_content img {
+        display: none !important;
+    }
+} */
+
+@media print and (width: 210mm) {
+
+    .paper_content, .paper_content img{
+        width: 210mm !important;
+        /* border: 2px solid red; */
+        /* background-size: 100%;
+        background-size: cover !important;
+        background-repeat: repeat-y; */
+    }
+}
